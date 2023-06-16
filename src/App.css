@@ -1,38 +1,73 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary: #000;
+  --secondary: #1e1e1e;
+  --neutral-1: #fff;
+  --neutral-2: #888888;
+  --neutral-3: #474747;
+  --accent: #0ebc3f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--primary);
+  color: var(--neutral-1);
+  font-family: "Inter", sans-serif;
+  padding-bottom: 128px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section {
+  padding: 32px;
+}
+
+.playlist {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.song {
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.song:hover {
+  background-color: var(--neutral-3);
+  transition: background-color 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.song > div > p:first-child {
+  margin-bottom: 4px;
+}
+
+.song > div > p:last-child {
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.song span {
+  color: var(--neutral-2);
+}
+
+#now-playing {
+  position: fixed;
+  bottom: 32px;
+  inset-inline: 32px;
+  background-color: var(--accent);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 11px 10px 50px -14px rgba(163, 163, 163, 0.71);
 }
