@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
 import NowPlaying from "./components/NowPlaying";
 import RecentlyPlayed from "./components/RecentlyPlayed";
 import FavArtists from "./components/FavArtists";
 
 const App = () => {
-  const [nowPlaying, setNowPlaying] = useState({
-    title: "",
-    artist: "",
-    duration: "",
-  });
+  const nowPlaying = useSelector((state) => state.nowPlaying);
 
   return (
     <>
-      <RecentlyPlayed onSongClick={(song) => setNowPlaying(song)} />
-      <FavArtists onArtistClick={(song) => setNowPlaying(song)} />
+      <RecentlyPlayed />
+      <FavArtists />
       <NowPlaying song={nowPlaying} />
     </>
   );
