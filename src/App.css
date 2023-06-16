@@ -46,11 +46,17 @@ button {
   transition: background-color 0.2s;
 }
 
-.song > div > p:first-child {
+.song > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.song .song-info > p:first-child {
   margin-bottom: 4px;
 }
 
-.song > div > p:last-child {
+.song .song-info > p:last-child {
   font-size: 14px;
   color: var(--accent);
 }
@@ -105,6 +111,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.artist-info > div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .artist p {
